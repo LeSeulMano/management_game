@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{url_for('static',
+    filename='css/index.css')}}" />
+    <script type="text/javascript" src="{{url_for('static',
+    filename='script/index.js')}}"></script>
+
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="top">
+                <div class="timer">
+                    <span id="time_span">00:00:00</span>
+                </div>
+                <div class="about">
+                    <span class="material-icons">
+                        more_horiz
+                    </span>
+                </div>
+                <div class="settings">
+                    <span class="material-icons">
+                        settings
+                    </span>
+                </div>
+                <div class="disconnect" id="disconnect">
+                    <span class="material-icons">
+                        logout
+                    </span>
+                </div>
+                <div class="mode" id="mode">
+                    <span class="material-icons">
+                        dark_mode
+                    </span>
+                </div>
+
+            </div>
+            <div class="bottom">
+                <div class="village_name">
+                    <span id="village_id">{{ foo }}</span>
+                </div>
+            </div>
+        </header>
+        <div class="entrepot">
+            <img class="img-entrepot" src="{{url_for('static',
+            filename='images/entrepot.png')}}" alt="">
+            <div class="materials">
+                <div class="element">
+                    <img src="{{url_for('static',
+                    filename='images/food.png')}}" alt="">
+                    <span class="food-quantity"></span>
+                </div>
+                <div class="element">
+                    <img src="{{url_for('static',
+                    filename='images/rock.png')}}" alt="">
+                    <span class="food-quantity"></span>
+                </div>
+                <div class="element">
+                    <img src="{{url_for('static',
+                    filename='images/log.png')}}" alt="">
+                    <span class="food-quantity"></span>
+                </div>
+                <div class="element">
+                    <img src="{{url_for('static',
+                    filename='images/iron.png')}}" alt="">
+                    <span class="food-quantity"></span>
+                </div>
+            </div>
+            <div class="ressources-tot">
+                <span class="total-res"></span>
+            </div>
+            <div class="level">
+                <span class="level-entre">Level : </span>
+            </div>
+        </div>
+        <aside class="houses">
+            <div class="content">
+                <img class="house" src="{{url_for('static',
+                filename='images/house-svgrepo-com.svg')}}" alt="">
+                <span id="house-number"></span>
+                <img class="person" src="{{url_for('static',
+                filename='images/personnes.png')}}" alt="">
+                <span id="habitant-number"></span>
+            </div>
+            <div class="houses-container"></div>
+            <div class="separator"></div>
+            <div class="add-content">
+                <div class="add-house">
+                    <span class="material-icons">add_circle</span>
+                    <img src="{{url_for('static',
+                    filename='images/house-svgrepo-com.svg')}}" alt="">
+                </div>
+                <div class="add-person" id="add-person">
+                    <span class="material-icons" id="add_person">add_circle</span>
+                    <img src="{{url_for('static',
+                    filename='images/personnes.png')}}" alt="">
+                </div>
+            </div>
+        </aside>
+        <div class="factories">
+            <div class="wrapper"></div>
+            <div class="buttons">
+                <div class="level-entrepot">
+                    <span class="material-icons">add_circle</span>
+                    <img src="{{url_for('static',
+                    filename='images/entrepot.png')}}" alt="">
+                </div>
+                <div class="add-factory" id="factory">
+                    <span class="material-icons">add_circle</span>
+                    <img src="{{url_for('static',
+                    filename='images/colis.png')}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="choice">
+            <div class="container">
+                <div class="title">
+                    <span>Choisir la répartition des habitants: </span>
+                    <span class="material-icons" id="close-choice">close</span>
+                </div>
+                <div class="button-person">
+                    <button class="adding_person">Ajouter des habitants</button>
+                </div>
+                <div class="adding">
+                    <div class="ferme">
+                        <span class="material-icons" data-groupe="remove">remove</span>
+                        <span class="name">Ferme</span>
+                        <span class="material-icons" data-groupe="add">add</span>
+                    </div>
+                    <div class="scierie">
+                        <span class="material-icons" data-groupe="remove">remove</span>
+                        <span class="name">Scierie</span>
+                        <span class="material-icons" data-groupe="add">add</span>
+                    </div>
+                    <div class="mine">
+                        <span class="material-icons" data-groupe="remove">remove</span>
+                        <span class="name">Mine</span>
+                        <span class="material-icons" data-groupe="add">add</span>
+                    </div>
+                    <div class="carriere">
+                        <span class="material-icons" data-groupe="remove">remove</span>
+                        <span class="name">Carriere</span>
+                        <span class="material-icons" data-groupe="add">add</span>
+                    </div>
+                </div>
+                <div class="footer">
+                    <span class="footer-hab">Nombre d'habitant qui travaille : </span>
+                </div>
+            </div>
+        </div>
+        <div class="choice-factory">
+            <div class="container">
+                <div class="title">
+                    <span>Rajoue d'une usine</span>
+                    <span class="material-icons" id="close-choice-factory">close</span>
+                </div>
+                <div class="adding">
+                    <div class="ferme-add">
+                        <img src="{{url_for('static',
+                        filename='images/grange.png')}}" alt="">
+                        <span class="material-icons" data-groupe="add-usine">add</span>
+                        <span class="title">Ferme</span>
+                    </div>
+                    <div class="mine-add">
+                        <img src="{{url_for('static',
+                        filename='images/mine.png')}}" alt="">
+                        <span class="material-icons" data-groupe="add-usine">add</span>
+                        <span class="title">Mine</span>
+                    </div>
+                    <div class="carriere-add">
+                        <img src="{{url_for('static',
+                        filename='images/stone.png')}}" alt="">
+                        <span class="material-icons" data-groupe="add-usine">add</span>
+                        <span class="title">Carrière</span>
+                    </div>
+                    <div class="scierie-add">
+                        <img src="{{url_for('static',
+                        filename='images/scierie.png')}}" alt="">
+                        <span class="material-icons" data-groupe="add-usine">add</span>
+                        <span class="title">Scierie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

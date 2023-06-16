@@ -1,0 +1,743 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto%3Awght%40300%3B400%3B700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #90AD83;
+}
+
+.app {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* header */
+
+.header {
+    width: 100%;
+    height: 10%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+}
+
+.top {
+    height: 5%;
+    width: calc(24rem + 29px);
+    position: fixed;
+    max-height: 5rem;
+}
+
+.about,
+.settings {
+    cursor: pointer;
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 5rem;
+    clip-path: polygon(1rem 0rem, 5rem 0rem, 4rem 5rem, 0rem 5rem);
+}
+
+.about {
+    left: 0;
+}
+
+.settings {
+    left: calc(4rem - 5px);
+    cursor: pointer;
+}
+
+.about span,
+.settings span {
+    background-color: #D9D9D9;
+    height: calc(100% - 5px);
+    width: calc(100% - 5px);
+    clip-path: polygon(calc(1rem + 5px) 5px, calc(5rem - 6px) 5px, calc(4rem - 5px) calc(5rem - 5px), 5px calc(5rem - 5px));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.timer {
+    left: calc(8rem - 5px);
+    position: absolute;
+    background-color: red;
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+    height: 100%;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 5px black;
+    border-bottom: solid 5px black;
+    box-sizing: border-box;
+}
+
+.disconnect,
+.mode {
+    cursor: pointer;
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 5rem;
+    clip-path: polygon(0rem 0rem, 4rem 0rem, 5rem 5rem, 1rem 5rem);
+}
+
+.mode {
+    right: 0;
+}
+
+.disconnect {
+    right: calc(4rem - 5px);
+}
+
+.disconnect span,
+.mode span {
+    background-color: #D9D9D9;
+    height: calc(100% - 5px);
+    width: calc(100% - 5px);
+    clip-path: polygon(5px 5px, calc(4rem - 5px) 5px, calc(5rem - 5px) calc(5rem - 5px), calc(1rem + 5px) calc(5rem - 5px));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bottom {
+    height: 5%;
+    max-height: 5rem;
+    width: calc(25rem + 29px);
+    top: min(5%, 5rem);
+    position: fixed;
+}
+
+.village_name {
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(calc(1rem - 2px) 0rem, calc(24rem + 30px) 0, calc(25rem + 29px) 100%, 0rem 100%);
+}
+
+.village_name span {
+    font-weight: 800;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    height: calc(100% - 5px);
+    width: calc(100% - 5px);
+    clip-path: polygon(calc(1rem - 2px + 5px) 2.5px, calc(24rem + 30px - 5px) 2.5px, calc(25rem + 29px - 8px) calc(100% - 2.5px), 8px calc(100% - 2.5px));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* entrepot */
+
+.entrepot {
+    height: 30%;
+    width: 20%;
+    position: relative;
+}
+
+.entrepot .img-entrepot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80%;
+    width: 50%;
+}
+
+.materials {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.element {
+    width: 100%;
+    margin-top: 10px;
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.element img {
+    height: 100%;
+    width: 30%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.element span {
+    font-weight: bold;
+}
+
+.ressources-tot {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ressources-tot .total-res {
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.level {
+    height: 20%;
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* houses */
+
+.houses {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    height: calc(100% - 10%);
+    width: 15%;
+    background-color: #D9D9D9;
+    border-radius: 15px 0 0 0;
+}
+
+.content {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .house {
+    height: 100%;
+    width: 10%;
+    margin-right: 5%;
+}
+
+.content .person {
+    height: 80%;
+    margin-left: 5%;
+}
+
+.content span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.houses-container {
+    width: 100%;
+    height: 85%;
+    overflow-y: scroll;
+    display: block;
+    scrollbar-color: #fff #817676;
+    scrollbar-width: thin;
+}
+
+.house-content {
+    margin-left: 4rem;
+    margin-top: 15%;
+    height: 10rem;
+    width: 10rem;
+    background-image: url("/static/images/house-svgrepo-com.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.house-content .img {
+    height: 20%;
+    width: 20%;
+    margin-left: -20%;
+    /* background-color: #fff; */
+    background-image: url("/static/images/personnes.png");
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.house-content span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.separator {
+    width: 80%;
+    height: 2px;
+    margin-left: 10%;
+    background-color: black;
+    margin-top: 5px;
+}
+
+.add-content {
+    height: calc(10% - 7px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-content .add-house,
+.add-content .add-person {
+    height: 100%;
+    width: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add-content .add-house img,
+.add-content .add-person img {
+    width: 40%;
+    margin-top: 10%;
+    height: 30%;
+}
+
+.add-content .material-icons {
+    margin-top: 10%;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* factories */
+
+.factories {
+    height: 60%;
+    width: 85%;
+}
+
+.factories .wrapper {
+    width: 90%;
+    height: 80%;
+    background-color: #D9D9D9;
+    border-radius: 15px 0 0 15px;
+    overflow-y: scroll;
+    padding-left: 10%;
+    scrollbar-color: #fff #817676;
+    scrollbar-width: thin;
+}
+
+.wrapper div {
+    margin-right: 10px;
+    height: 70%;
+    width: calc(100% / 5);
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrapper .factory:nth-child(5n) {
+    float: left;
+    height: 70%;
+}
+
+.factories .grange {
+    height: 60%;
+    width: 60%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.factories .number {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+.number .person {
+    background-image: url('/static/images/personnes.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 10%;
+}
+
+.factories .buttons {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons .level-entrepot,
+.buttons .add-factory {
+    height: 100%;
+    width: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.level-entrepot img,
+.add-factory img {
+    height: 30%;
+    width: 40%;
+}
+
+.level-entrepot span,
+.add-factory span {
+    cursor: pointer;
+    margin-bottom: 10%;
+    font-size: 40px;
+}
+
+.bloc-modale {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.bloc-modale .overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.bloc-modale .modale-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 270px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px 10px;
+    z-index: 90;
+    position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.modale-container .modale-close {
+    cursor: pointer;
+    margin-top: 20px;
+    height: 50px;
+    width: 50px;
+}
+
+.modale-close .material-icons {
+    color: red;
+    font-size: 50px;
+}
+
+.modale-container .modale-text {
+    color: black;
+    margin-top: 10px;
+    width: 100%;
+    height: calc(270px - 30px - 50px - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.modale-text h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+}
+.modale-text .text {
+    text-align: center;
+    font-size: 15px;
+    color: rgba(50, 50, 50, 0.8);
+}
+
+.modale-container .modale-button {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modale-button .button-cancel {
+    cursor: pointer;
+    height: 50%;
+    width: 70%;
+    background-color: #fff;
+    border-radius: 5px;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    transition: .5s;
+}
+.modale-button .button-cancel :hover {
+    color: black;
+    background-color: #fff;
+}
+
+/* Choise */
+
+.choice {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.choice 
+.container {
+    height: 50%;
+    width: 30%;
+    background-color: #fff;
+    border-radius: 15px;
+}
+.choice
+.container
+.title {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.title span {
+    font-weight: bold;    
+    font-size: 20px;
+}
+.title
+.material-icons {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #817676;
+    color: white;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.container
+.button-person {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-person
+button{
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 80%;
+    width: 50%;
+    border-radius: 15px;
+    transition: .5s ease-out;
+    font-size: 15px;
+    font-weight: bold;
+}
+.button-person
+button:hover{
+    background-color: #fff;
+    border: solid 1px black;
+    color: black;
+}
+
+.container
+.adding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    flex-direction: column;
+}
+
+.adding 
+div {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adding 
+div
+.name{
+    font-size: 20px;
+}
+.adding 
+div
+.material-icons {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.container
+.footer {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.choice-factory {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.choice-factory
+.container {
+    height: 50%;
+    width: 30%;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.choice-factory
+.container
+.title {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.title span {
+    font-weight: bold;    
+    font-size: 20px;
+}
+.title
+.material-icons {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #817676;
+    color: white;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.choice-factory
+.container
+.adding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
+}
+
+.choice-factory
+.container
+.adding
+div {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice-factory
+.container
+.adding
+div
+img{
+    height: 50px;
+    width: 50px;
+
+}
+
+.choice-factory
+.container
+.adding
+div
+.title {
+    height: 100%;
+    width: 20%;
+    font-weight: bold;
+    font-size: 20px;
+}

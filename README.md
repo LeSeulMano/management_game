@@ -21,4 +21,7 @@ Ce projet est un jeu de gestion basé sur les technologies natives du web, HTML 
    
  - La gestion des utilisateurs (la possibilité d'en avoir plusieurs, et que chaque utilisateur puisse avoir plusieurs village) n'a pas été réaliser, cependant le terrain est préparer avec un peu plus de temps en plus cela aurait été possible sans grande difficultée. <br>
  - En therme de faille détecté, la plus grande est l'id qui est afficher en haut de la page qui stock en faite l'id de l'utilisateur connecté (laisser pour faire des test), peut être changer par un attaquant. Nous récupérons le contenu de cette id dans le javascript pour ensuite l'envoyer au flask pour effectué des requettes, laissant donc __une vulnérabilité xss.__ <br>
- - Pour facilité l'usage (et que nous avions pas le temps de gérer la vitesse du timer avec le x5 et x10) nous avons remplacer tous les timings en heure, par des timings en minutes.
+ - Pour facilité l'usage (et que nous avions pas le temps de gérer la vitesse du timer avec le x5 et x10) nous avons remplacer tous les timings en heure, par des timings en minutes.<br><br>
+
+
+> Note: des fois le nombre de ressources s'affiche avec beaucoup de virgules malgrès les arrondis, on ne sait pas pourquoi et par manque de temps ce bug ne reste pas corriger, il le sera surement pour la v2
